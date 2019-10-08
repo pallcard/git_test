@@ -74,6 +74,11 @@ git push -u origin master
 git clone 地址
 ```
 
+#### 查看远程库信息
+```
+git remote -v
+```
+
 ### 分支
 #### 创建分支
 ```
@@ -140,11 +145,6 @@ git stash apply stash@{0}
 git cherry-pick 4c805e2
 ```
 
-#### 查看远程库信息
-```
-git remote -v
-```
-
 #### 推送分支
 ```
 git push origin master
@@ -156,4 +156,21 @@ git push origin master
 git rm -r ––cached dirname  //删除远程文件夹，但保留本地文件夹
 git commit -m ""           //提交操作，并添加描述
 git push origin master     //推送
+```
+
+### merge VS rebase
+两者都可以合并分支，主要区别是所产生的log tree不一样。
+```
+原分支情况：
+A ---  B ---  C
+         -
+          --  D  ---  E
+
+git merge后:
+A ---  B ---  C  ---------- F
+         -              -
+          --  D  ---  E
+
+git rebase后:
+A ---  B ---  C  --- D' --- E'
 ```
