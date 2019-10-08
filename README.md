@@ -150,3 +150,10 @@ git remote -v
 git push origin master
 ```
 
+### 删除远程仓库文件
+当我们不错误的把需要ignore的文件上传到了远程仓库时，需要将其删除
+```
+git rm -r –cached dirname  //删除远程文件夹，但保留本地文件夹
+git commit -m ""           //提交操作，并添加描述
+git push origin master     //推送
+```
