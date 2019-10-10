@@ -145,6 +145,11 @@ git stash apply stash@{0}
 git cherry-pick 4c805e2
 ```
 
+### 设置本地分支追踪远程分支
+```
+git push --set-upstream origin <branchname>
+```
+
 #### 推送分支
 ```
 git push origin master
