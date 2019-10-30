@@ -174,3 +174,20 @@ A ---  B ---  C  ---------- F
 git rebase后:
 A ---  B ---  C  --- D' --- E'
 ```
+
+### 分支重命名
+#### 1.本地分支重命名
+```
+git branch -m oldName newName
+```
+#### 2.远程分支重命名
+```
+// 重命名本地分支
+git branch -m oldName newName
+// 删除远程分支
+git push --delete origin oldName
+// push 本地分支
+git push origin newName
+// 本地分支远程分支关联
+git branch --set-upstream-to origin/newName
+```
