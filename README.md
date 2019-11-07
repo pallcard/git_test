@@ -191,3 +191,11 @@ git push origin newName
 // 本地分支远程分支关联
 git branch --set-upstream-to origin/newName
 ```
+
+### 本地git push 免用户名和密码设置
+```
+git config --global user.email "xxx@xxmail.com"
+git config --global user.name "xxx"
+git config --global credential.helper store   # git push的时候记住用户名和密码
+git config --global push.default simple       #从Git 2.0之后，push.default的默认值由'matching'改为'simple'
+```
