@@ -199,3 +199,11 @@ git config --global user.name "xxx"
 git config --global credential.helper store   # git push的时候记住用户名和密码
 git config --global push.default simple       #从Git 2.0之后，push.default的默认值由'matching'改为'simple'
 ```
+
+### 删除git库中untracked files（未监控）的文件
+```
+git clean -f 
+git clean -fd    # 连 untracked 的目录也一起删掉
+git clean -xfd   # 连 gitignore 的untrack 文件/目录也一起删掉 （慎用，一般这个是用来删掉编译出来的 .o之类的文件用的）
+git clean -nf    # 在用上述 git clean 前，强烈建议加上 -n 参数来先看看会删掉哪些文件，防止重要文件被误删
+```
